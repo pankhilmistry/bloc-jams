@@ -33,6 +33,14 @@ body {
 	max-width: 64rem;
 }
 
+.clearfix::after {
+   content: ".";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
 
 /* For medium and small screens (640px)*/
 @media (min-width: 640px){
