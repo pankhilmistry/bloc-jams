@@ -86,7 +86,11 @@ var findParentByClassName=function(element,targetClass){
     
     if(element){
         var currentParent=element.parentElement;
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> CP_27_PlayPause_2_BugFixes
         if(!currentParent){
             alert("No parent found");
         }
@@ -121,7 +125,11 @@ var getSongItem = function(element) {
 };
 
 var clickHandler = function(targetElement) {
+<<<<<<< HEAD
     var songItem = getSongItem(targetElement);
+=======
+    var songItem = getSongItem(targetElement);  
+>>>>>>> CP_27_PlayPause_2_BugFixes
 
     if (currentlyPlayingSong === null) {
          songItem.innerHTML = pauseButtonTemplate;
@@ -137,13 +145,20 @@ var clickHandler = function(targetElement) {
          songItem.innerHTML = pauseButtonTemplate;
          currentlyPlayingSong = songItem.getAttribute('data-song-number');
      }
+<<<<<<< HEAD
  }
+=======
+ };
+>>>>>>> CP_27_PlayPause_2_BugFixes
 
  var songListContainer = document.getElementsByClassName('album-view-song-list')[0];
  var songRows = document.getElementsByClassName('album-view-song-item');
  var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></span></a>';
  var pauseButtonTemplate = '<a class="album-song-button"><span class="ion-pause"></span></a>';
+<<<<<<< HEAD
 
+=======
+>>>>>>> CP_27_PlayPause_2_BugFixes
  var currentlyPlayingSong = null;
 
 
@@ -153,8 +168,12 @@ var clickHandler = function(targetElement) {
      songListContainer.addEventListener('mouseover', function(event) {
          if(event.target.parentElement.className==='album-view-song-item'){
             var songItem = getSongItem(event.target);
+<<<<<<< HEAD
 
             if (songItem.getAttribute('data-song-number') !== currentlyPlayingSong) {
+=======
+            if (songItem.getAttribute('data-song-number') !== currentlyPlayingSong){
+>>>>>>> CP_27_PlayPause_2_BugFixes
                 songItem.innerHTML = playButtonTemplate;
             }
          }
@@ -162,7 +181,11 @@ var clickHandler = function(targetElement) {
 
      for (var i = 0; i < songRows.length; i++) {
          songRows[i].addEventListener('mouseleave', function(event) {
+<<<<<<< HEAD
             // #1
+=======
+           // #1
+>>>>>>> CP_27_PlayPause_2_BugFixes
              var songItem = getSongItem(event.target);
              var songItemNumber = songItem.getAttribute('data-song-number');
  
@@ -174,7 +197,11 @@ var clickHandler = function(targetElement) {
 
          songRows[i].addEventListener('click', function(event) {
              // Event handler call
+<<<<<<< HEAD
              clickHandler(event.target);
+=======
+               clickHandler(event.target);
+>>>>>>> CP_27_PlayPause_2_BugFixes
          });
      }
 
