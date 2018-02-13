@@ -95,6 +95,24 @@ var getSongNumberCell=function(number){
  };
 
 
+ var togglePlayFromPlayerBar=function(){
+
+      var $nowPlaying=getSongNumberCell(currentlyPlayingSongNumber);
+
+      if (currentSoundFile){
+         if(currentSoundFile.isPaused()){
+            $nowPlaying.html(pauseButtonTemplate);
+            $(this).html(playerBarPauseButton);
+            currentSoundFile.play();
+         }
+         else {
+            $nowPlaying.html(playButtonTemplate);
+            $(this).html(playerBarPlayButton);
+            currentSoundFile.pause();
+         }
+      }
+     }; 
+
  var setCurrentAlbum = function(album) {
      currentAlbum = album;
     // #1
@@ -226,12 +244,15 @@ var nextSong = function() {
  var $previousButton = $('.main-controls .previous');
  var $nextButton = $('.main-controls .next');
 
+ var $togglePlay= $('.main-controls .play-pause');
+
 
  $(document).ready(function() {
 
      setCurrentAlbum(albumPicasso);
      $previousButton.click(previousSong);
      $nextButton.click(nextSong);
+     $togglePlay.click(togglePlayFromPlayerBar);
 
      // var albums=[albumPicasso, albumMarconi, albumNewton];
      // var index=1;
